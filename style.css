@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Space+Grotesk:wght@600;700&display=swap");
+#left-main {
+    width: 50%;
+    height: 100%;
+    background: #13161a;
+    border-left: 1px solid #54575c;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 0;
+    transform-style: preserve-3d;
+}
+
+:root {
+    --padding: 15px;
+    --sizeMultiplier: 0.5;
+}
+
+#left-main-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+}
+
+body {
+    background: #0d0f12;
+    overflow: hidden;
+}
+
+h1 {
+    font-family: "Space Grotesk", sans-serif;
+    color: #dadfe8;
+    text-align: left;
+    font-size: 46px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.form-label {
+    font-family: "Space Grotesk", sans-serif;
+    color: #dadfe8;
+    text-align: left;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    margin-top: 25px;
+    width: 100%;
+}
+
+.form-group-half {
+    display: inline-block;
+    width: calc(50% - calc(var(--padding)));
+}
+
+.form-group-half-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+    position: relative;
+    width: calc(100% - (var(--padding) * 2));
+    margin: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 17px;
+    height: 35px;
+    background: #181c21;
+    border: 1px solid #54575c;
+    border-radius: 5px;
+    font-family: "jetbrains mono";
+    padding: calc(var(--padding) / 2) var(--padding);
+    color: #bfc4c9;
+}
+
+button {
+    position: relative;
+    width: 40%;
+    display: block;
+    margin-top: 25px;
+    height: 57px;
+    font-size: 17px;
+    font-family: "jetbrains mono";
+    color: #13161a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-size: 200% auto;
+    background-image: linear-gradient(133deg, rgba(255, 218, 69, 1) 0%, rgb(255, 118, 68) 25%, rgb(188, 73, 255) 75%, rgb(125, 233, 255) 100%);
+    z-index: 10;
+    transform-style: preserve-3d;
+    box-shadow: 0 0px 0px #0000;
+    transition: 0.5s background, 0.5s color;
+}
+
+button:hover {
+    color: white;
+    background-position: right center;
+}
+
+button:after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    content: "";
+    z-index: -1;
+    opacity: 0;
+    filter: blur(0px);
+    border-radius: 10px;
+    background: inherit;
+    background-size: inherit;
+    transition: 0.5s opacity, 0.5s filter, 0.5s top;
+}
+
+button:hover:after {
+    opacity: 0.45;
+    filter: blur(25px);
+    top: 5px;
+}
+
+@media only screen and (max-width: 1100px) {
+    .form-group-half {
+        display: inline-block;
+        width: 100% !important;
+    }
+    .form-group-half-wrapper {
+        display: block;
+    }
+    h1 {
+        font-size: 36px;
+    }
+}
+
+#hyperio-logo {
+    width: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#right-main {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 0;
+    transform-style: preserve-3d;
+}
+
+#card:after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 30px;
+    left: 0;
+    content: "";
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    z-index: -1;
+    opacity: 0.45;
+    transform: translateZ(-10px);
+    border-radius: 10px;
+    filter: blur(50px);
+    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background-size: 800% 800%;
+    -webkit-animation: rainbow 18s ease infinite;
+    -z-animation: rainbow 18s ease infinite;
+    -o-animation: rainbow 18s ease infinite;
+    animation: rainbow 18s ease infinite;
+}
+
+canvas {
+    position: absolute;
+    z-index: -100;
+}
+
+@-webkit-keyframes rainbow {
+    0% {
+        background-position: 0% 82%;
+    }
+    50% {
+        background-position: 100% 19%;
+    }
+    100% {
+        background-position: 0% 82%;
+    }
+}
+
+@-moz-keyframes rainbow {
+    0% {
+        background-position: 0% 82%;
+    }
+    50% {
+        background-position: 100% 19%;
+    }
+    100% {
+        background-position: 0% 82%;
+    }
+}
+
+@-o-keyframes rainbow {
+    0% {
+        background-position: 0% 82%;
+    }
+    50% {
+        background-position: 100% 19%;
+    }
+    100% {
+        background-position: 0% 82%;
+    }
+}
+
+@keyframes rainbow {
+    0% {
+        background-position: 0% 82%;
+    }
+    50% {
+        background-position: 100% 19%;
+    }
+    100% {
+        background-position: 0% 82%;
+    }
+}
