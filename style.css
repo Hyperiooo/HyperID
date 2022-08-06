@@ -1,14 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Space+Grotesk:wght@600;700&display=swap");
+
 #left-main {
     width: 50%;
     height: 100%;
-    background: #13161a;
+    background: #13161ade;
     border-left: 1px solid #54575c;
     position: absolute;
     right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0;
     z-index: 0;
+    backdrop-filter: blur(200px);
     transform-style: preserve-3d;
 }
 
@@ -26,7 +27,6 @@
 }
 
 body {
-    background: #0d0f12;
     overflow: hidden;
 }
 
@@ -92,7 +92,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     background-size: 200% auto;
-    background-image: linear-gradient(133deg, rgba(255, 218, 69, 1) 0%, rgb(255, 118, 68) 25%, rgb(188, 73, 255) 75%, rgb(125, 233, 255) 100%);
+    background-image: linear-gradient(133deg, #ffda45 0%, #ff7644 25%, #bc49ff 75%, #7de9ff 100%);
     z-index: 10;
     transform-style: preserve-3d;
     box-shadow: 0 0px 0px #0000;
@@ -131,9 +131,11 @@ button:hover:after {
         display: inline-block;
         width: 100% !important;
     }
+
     .form-group-half-wrapper {
         display: block;
     }
+
     h1 {
         font-size: 36px;
     }
@@ -191,9 +193,11 @@ canvas {
     0% {
         background-position: 0% 82%;
     }
+
     50% {
         background-position: 100% 19%;
     }
+
     100% {
         background-position: 0% 82%;
     }
@@ -203,9 +207,11 @@ canvas {
     0% {
         background-position: 0% 82%;
     }
+
     50% {
         background-position: 100% 19%;
     }
+
     100% {
         background-position: 0% 82%;
     }
@@ -215,9 +221,11 @@ canvas {
     0% {
         background-position: 0% 82%;
     }
+
     50% {
         background-position: 100% 19%;
     }
+
     100% {
         background-position: 0% 82%;
     }
@@ -227,10 +235,18 @@ canvas {
     0% {
         background-position: 0% 82%;
     }
+
     50% {
         background-position: 100% 19%;
     }
+
     100% {
         background-position: 0% 82%;
     }
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
