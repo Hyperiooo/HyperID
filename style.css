@@ -287,7 +287,7 @@ button.button-social:hover:after {
 }
 
 .divider-arm-right {
-    background: linear-gradient(to right, #0000 0%, var(--text)00 100%);
+    background: linear-gradient(to right, var(--text) 0%, transparent 100%);
 }
 
 .divider-text {
