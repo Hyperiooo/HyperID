@@ -1,16 +1,42 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Space+Grotesk:wght@600;700&display=swap");
 
-#left-main {
-    width: 50%;
-    height: 100%;
+#card {
+    width: 80vw;
+    max-width: 600px;
+    height: 800px;
     background: #13161ade;
-    border-left: 1px solid #54575c;
+    border: 1px solid #54575c;
+    border-radius: 20px;
+    overflow: hidden;
     position: absolute;
-    right: 0;
-    top: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     z-index: 0;
     backdrop-filter: blur(200px);
     transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+#card-header {
+    width: 100%;
+    min-height: fit-content;
+    z-index: 0;
+    transform-style: preserve-3d;
+    flex-grow: 1;
+    flex-shrink: 0;
+    max-height: 200px;
+}
+
+#hyperio-logo {
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 :root {
@@ -18,12 +44,45 @@
     --sizeMultiplier: 0.5;
 }
 
-#left-main-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
+#card-content {
+    padding: 40px;
+    background: #13161a;
+    width: 100%;
+    padding-bottom: 60px;
+}
+
+/* media query that has max of 650px*/
+@media screen and (max-width: 650px) {
+    #card {
+        width: 100%;
+        margin: 0;
+        height: 100vh;
+        max-width: unset;
+        border: none;
+        border-radius: 0;
+        left: 0;
+        top: 0;
+        transform: unset;
+    }
+
+    #card-header {
+        width: 100%;
+        min-height: unset;
+        z-index: 0;
+        transform-style: preserve-3d;
+        flex-grow: unset;
+        flex-shrink: unset;
+        height: 40px;
+    }
+
+    #card-content {
+        padding: 40px;
+        background: #13161a;
+        width: 100%;
+        padding-bottom: 60px;
+        flex-grow: 1;
+        min-height: 60%;
+    }
 }
 
 body {
@@ -34,9 +93,9 @@ h1 {
     font-family: "Space Grotesk", sans-serif;
     color: #dadfe8;
     text-align: left;
-    font-size: 46px;
-    margin-bottom: 0;
-    margin-top: 0;
+    font-size: 42px;
+    margin-bottom: 50px;
+    margin-top: 20px;
 }
 
 .form-label {
@@ -79,13 +138,15 @@ input {
     color: #bfc4c9;
 }
 
-button {
+button.button-imp {
     position: relative;
-    width: 40%;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 30px;
     display: block;
     margin-top: 25px;
-    height: 57px;
-    font-size: 17px;
+    height: 45px;
+    font-size: 15px;
     font-family: "jetbrains mono";
     color: #13161a;
     border: none;
@@ -99,12 +160,12 @@ button {
     transition: 0.5s background, 0.5s color;
 }
 
-button:hover {
+button.button-imp:hover {
     color: white;
     background-position: right center;
 }
 
-button:after {
+button.button-imp:after {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -120,10 +181,89 @@ button:after {
     transition: 0.5s opacity, 0.5s filter, 0.5s top;
 }
 
-button:hover:after {
+button.button-imp:hover:after {
     opacity: 0.45;
     filter: blur(25px);
     top: 5px;
+}
+
+button.button-social {
+    position: relative;
+    width: 60%;
+    margin: auto;
+    display: block;
+    margin-top: 25px;
+    height: 45px;
+    font-size: 15px;
+    font-family: "jetbrains mono";
+    color: #13161a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+    transform-style: preserve-3d;
+    box-shadow: 0 0px 0px #0000;
+    transition: 0.5s background, 0.5s color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+button.button-social-google {
+    background-size: 600% auto;
+    background-image: linear-gradient(133deg, white, white 20%, #3dd8ff 50%, #ff5de9 65%, #ffe77a 85%, #85ffb8 100%);
+}
+
+button.button-social-google:hover {
+    background-size: 200% auto;
+}
+
+button.button-social:hover {
+    background-position: right center;
+}
+
+button.button-social:after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    content: "";
+    z-index: -1;
+    opacity: 0;
+    filter: blur(0px);
+    border-radius: 10px;
+    background: inherit;
+    background-size: inherit;
+    transition: 0.5s opacity, 0.5s filter, 0.5s top;
+}
+
+button.button-social:hover:after {
+    opacity: 0.25;
+    filter: blur(15px);
+    top: 5px;
+}
+
+.divider {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.divider-arm {
+    width: 40%;
+    height: 1px;
+    background: #dadfe8;
+    display: inline-block;
+}
+
+.divider-text {
+    color: #dadfe8;
+    margin: 0;
+    text-transform: capitalize;
+    font-family: "jetbrains mono";
 }
 
 @media only screen and (max-width: 1100px) {
@@ -139,49 +279,6 @@ button:hover:after {
     h1 {
         font-size: 36px;
     }
-}
-
-#hyperio-logo {
-    width: 150px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-#right-main {
-    width: 50%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 0;
-    transform-style: preserve-3d;
-}
-
-#card:after {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 30px;
-    left: 0;
-    content: "";
-    animation-duration: 3s;
-    animation-name: slidein;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    z-index: -1;
-    opacity: 0.45;
-    transform: translateZ(-10px);
-    border-radius: 10px;
-    filter: blur(50px);
-    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
-    background-size: 800% 800%;
-    -webkit-animation: rainbow 18s ease infinite;
-    -z-animation: rainbow 18s ease infinite;
-    -o-animation: rainbow 18s ease infinite;
-    animation: rainbow 18s ease infinite;
 }
 
 canvas {

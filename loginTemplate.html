@@ -9,42 +9,35 @@
     <link rel="stylesheet" href="./style.css">
     <script src="./scripts/main.js" defer></script>
     <script src="./scripts/background.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Hyperiooo/Hypericons@v0.2.5/fonts/hypericons.css">
 </head>
 
 <body>
     <div class="main">
         <div id="right-main">
-            <img id="hyperio-logo" src="./assets/Logo.svg" alt="Hyperio Logo" srcset="">
         </div>
-        <div id="left-main">
-            <div id="left-main-content">
-                <h1>Create your HyperID</h1>
+        <div id="card">
+            <div id="card-header"><img id="hyperio-logo" src="./assets/Logo.svg" alt="Hyperio Logo" srcset="">
+            </div>
+            <div id="card-content">
+                <h1>Login with your HyperID</h1>
                 <div>
-                    <div class="form-group-half-wrapper">
-                        <div class="form-group form-group-half">
-                            <p class="form-label">First Name</p>
-                            <input type="text">
-                        </div>
-                        <div class="form-group form-group-half">
-                            <p class="form-label">Last Name</p>
-                            <input type="text">
-                        </div>
-                    </div>
                     <div class="form-group">
                         <p class="form-label">Email Address</p>
-                        <input type="email" value="boobies@gmail.com">
+                        <input type="email">
                     </div>
-                    <div class="form-group-half-wrapper">
-                        <div class="form-group form-group-half">
-                            <p class="form-label">Password</p>
-                            <input type="password">
-                        </div>
-                        <div class="form-group form-group-half">
-                            <p class="form-label">Confirm Password</p>
-                            <input type="password">
-                        </div>
+                    <div class="form-group">
+                        <p class="form-label">Password</p>
+                        <input type="password">
                     </div>
-                    <button>Log In</button>
+                    <button class="button-imp">Log In</button>
+                    <div class="divider">
+                        <span class="divider-arm"></span>
+                        <p class="divider-text"> or</p>
+                        <span class="divider-arm"></span>
+                    </div>
+                    <button class="button-social button-social-google" id="google-login">
+                        <i class="hi-logo-google-line"></i>Log In With Google</button>
                 </div>
             </div>
         </div>

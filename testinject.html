@@ -11,7 +11,12 @@
 </head>
 
 <body>
+    <script>
 
+        window.addEventListener("onHTMLInject", () => {
+            addJSFile("./scripts/firebase/login.js", true);
+        });
+    </script>
 </body>
 
 </html>

@@ -13,6 +13,7 @@ function includeHTML() {
 				if (this.readyState == 4) {
 					if (this.status == 200) {
 						elmnt.innerHTML = this.responseText;
+						window.dispatchEvent(injEvent);
 					}
 					if (this.status == 404) {
 						elmnt.innerHTML = "Page not found.";
@@ -169,10 +170,8 @@ class GlowParticle {
 	}
 }
 var colors;
-window.onload = function () {};
 
 includeHTML();
-onLoad();
 
 function onLoad() {
 	var host = window.location.host;
@@ -185,3 +184,14 @@ function onLoad() {
 	colors = colorList[subdomain] || HyperIDGradient;
 	new Background();
 }
+
+function addJSFile(url, module) {
+	var script = document.createElement("script");
+	script.setAttribute("type", module ? "module" : "text/javascript");
+	script.setAttribute("src", url);
+	document.getElementsByTagName("head")[0].appendChild(script);
+}
+
+const injEvent = new Event("onHTMLInject");
+
+window.addEventListener("onHTMLInject", onLoad);
