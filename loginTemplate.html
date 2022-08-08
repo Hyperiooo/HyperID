@@ -26,7 +26,8 @@
                         <p class="divider-text"> or</p>
                         <span class="divider-arm"></span>
                     </div>
-                    <button class="button-social button-social-google" onclick="window.dispatchEvent(googleSignInEvent)"
+                    <button class="button-social button-social-google" onclick="
+                    var googleSignInEvent = new Event('attempt-google-login');window.dispatchEvent(googleSignInEvent)"
                         id="google-login">
                         <i class="hi-logo-google-line"></i>Log In With Google</button>
                 </div>
@@ -34,7 +35,6 @@
         </div>
     </div>
     <script>
-        var googleSignInEvent = new Event("attempt-google-login")
         var host = window.location.host
         var subdomain = host.split('.')[0] || "none"
         var colorList = {
