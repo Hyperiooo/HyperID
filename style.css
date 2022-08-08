@@ -3,8 +3,7 @@
 #card {
     width: 80vw;
     max-width: 500px;
-    background: #010811cc;
-    border: 1px solid #54575c;
+    background: var(--background);
     border-radius: 20px;
     overflow: hidden;
     position: absolute;
@@ -45,6 +44,14 @@
 :root {
     --padding: 15px;
     --sizeMultiplier: 0.5;
+    --background: #010811cc;
+    /* #dadfe896 */
+    --backgroundO: #272c33;
+    /* #e6e6e6 */
+    --text: #dadfe8;
+    /* #272c33 */
+    --outline: #54575c;
+    /* #e3e3e4 */
 }
 
 #card-content {
@@ -99,7 +106,7 @@ body {
 
 h1 {
     font-family: "Space Grotesk", sans-serif;
-    color: #dadfe8;
+    color: var(--text);
     text-align: left;
     font-size: 42px;
     margin-top: 20px;
@@ -109,7 +116,7 @@ h1 {
 
 .form-label {
     font-family: "Space Grotesk", sans-serif;
-    color: #dadfe8;
+    color: var(--text);
     text-align: left;
     margin: 0;
     margin-bottom: 10px;
@@ -139,12 +146,12 @@ input {
     margin-right: auto;
     font-size: 17px;
     height: 45px;
-    background: #181c21;
-    border: 1px solid #54575c;
+    background: var(--backgroundO);
+    border: 1px solid var(--outline);
     border-radius: 5px;
     font-family: "jetbrains mono";
     padding: 0 var(--padding);
-    color: #bfc4c9;
+    color: var(--text);
 }
 
 button.button-imp {
@@ -271,12 +278,20 @@ button.button-social:hover:after {
 .divider-arm {
     width: 40%;
     height: 1px;
-    background: #dadfe8;
+    background: var(--text);
     display: inline-block;
 }
 
+.divider-arm-left {
+    background: linear-gradient(to right, #0000 0%, var(--text) 100%);
+}
+
+.divider-arm-right {
+    background: linear-gradient(to right, #0000 0%, var(--text)00 100%);
+}
+
 .divider-text {
-    color: #dadfe8;
+    color: var(--text);
     margin: 0;
     text-transform: capitalize;
     font-family: "jetbrains mono";
