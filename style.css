@@ -290,6 +290,11 @@ button.button-social:hover:after {
     background: linear-gradient(to right, var(--text) 0%, transparent 100%);
 }
 
+.main {
+    height: 100vh;
+    position: relative;
+}
+
 .divider-text {
     color: var(--text);
     margin: 0;
