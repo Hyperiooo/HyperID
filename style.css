@@ -295,6 +295,11 @@ button.button-social:hover:after {
     position: relative;
 }
 
+canvas {
+    max-width: 100vw;
+    max-height: 100vh; overflow: hidden;
+}
+
 .divider-text {
     color: var(--text);
     margin: 0;
