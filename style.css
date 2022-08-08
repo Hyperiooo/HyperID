@@ -2,9 +2,8 @@
 
 #card {
     width: 80vw;
-    max-width: 600px;
-    height: 800px;
-    background: #13161ade;
+    max-width: 500px;
+    background: #010811cc;
     border: 1px solid #54575c;
     border-radius: 20px;
     overflow: hidden;
@@ -21,22 +20,26 @@
     flex-wrap: wrap;
 }
 
+.form-multi-button {
+    display: flex;
+    justify-content: space-between;
+}
+
 #card-header {
     width: 100%;
     min-height: fit-content;
     z-index: 0;
     transform-style: preserve-3d;
-    flex-grow: 1;
-    flex-shrink: 0;
-    max-height: 200px;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
 }
 
 #hyperio-logo {
-    height: 100px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    height: 60px;
 }
 
 :root {
@@ -46,9 +49,9 @@
 
 #card-content {
     padding: 40px;
-    background: #13161a;
     width: 100%;
     padding-bottom: 60px;
+    padding-top: 0;
 }
 
 /* media query that has max of 650px*/
@@ -63,25 +66,30 @@
         left: 0;
         top: 0;
         transform: unset;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: unset;
+        align-content: center;
     }
 
     #card-header {
         width: 100%;
-        min-height: unset;
+        min-height: fit-content;
         z-index: 0;
         transform-style: preserve-3d;
-        flex-grow: unset;
-        flex-shrink: unset;
-        height: 40px;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
     }
 
     #card-content {
         padding: 40px;
-        background: #13161a;
         width: 100%;
         padding-bottom: 60px;
-        flex-grow: 1;
-        min-height: 60%;
+        height: fit-content;
     }
 }
 
@@ -94,8 +102,9 @@ h1 {
     color: #dadfe8;
     text-align: left;
     font-size: 42px;
-    margin-bottom: 50px;
     margin-top: 20px;
+    transform: translateY(4px);
+    text-align: center;
 }
 
 .form-label {
@@ -129,12 +138,12 @@ input {
     margin-left: auto;
     margin-right: auto;
     font-size: 17px;
-    height: 35px;
+    height: 45px;
     background: #181c21;
     border: 1px solid #54575c;
     border-radius: 5px;
     font-family: "jetbrains mono";
-    padding: calc(var(--padding) / 2) var(--padding);
+    padding: 0 var(--padding);
     color: #bfc4c9;
 }
 
@@ -189,10 +198,11 @@ button.button-imp:hover:after {
 
 button.button-social {
     position: relative;
-    width: 60%;
-    margin: auto;
+    padding: 20px 20px;
+    margin: 0;
     display: block;
     margin-top: 25px;
+    margin-bottom: 25px;
     height: 45px;
     font-size: 15px;
     font-family: "jetbrains mono";
@@ -204,19 +214,25 @@ button.button-social {
     transform-style: preserve-3d;
     box-shadow: 0 0px 0px #0000;
     transition: 0.5s background, 0.5s color;
+    background: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
 }
 
 button.button-social-google {
-    background-size: 600% auto;
-    background-image: linear-gradient(133deg, white, white 20%, #3dd8ff 50%, #ff5de9 65%, #ffe77a 85%, #85ffb8 100%);
+    background: white;
 }
 
-button.button-social-google:hover {
-    background-size: 200% auto;
+button.button-social-github {
+    background: #24292F;
+    color: white;
+}
+
+button.button-social-twitter {
+    background: #14a1ff;
+    color: white;
 }
 
 button.button-social:hover {

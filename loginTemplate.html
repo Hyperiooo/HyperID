@@ -10,7 +10,30 @@
             <div id="card-header"><img id="hyperio-logo" src="./assets/Logo.svg" alt="Hyperio Logo" srcset="">
             </div>
             <div id="card-content">
-                <h1>Login with your HyperID</h1>
+                <h1>Sign In</h1>
+                <div class="form-multi-button">
+                    <button class="button-social button-social-github" onclick="
+                    var googleSignInEvent = new Event('attempt-google-login');window.dispatchEvent(googleSignInEvent)"
+                        id="google-login">
+                        <i class="hi-logo-github-line"></i>GitHub
+                    </button>
+                    <button class="button-social button-social-twitter" onclick="
+                    var googleSignInEvent = new Event('attempt-google-login');window.dispatchEvent(googleSignInEvent)"
+                        id="google-login">
+                        <i class="hi-logo-twitter-fill"></i>Twitter
+                    </button>
+                    <button class="button-social button-social-google" onclick="
+                    var googleSignInEvent = new Event('attempt-google-login');window.dispatchEvent(googleSignInEvent)"
+                        id="google-login">
+                        <i class="hi-logo-google-line"></i>Google
+                    </button>
+
+                </div>
+                <div class="divider">
+                    <span class="divider-arm"></span>
+                    <p class="divider-text"> or</p>
+                    <span class="divider-arm"></span>
+                </div>
                 <div>
                     <div class="form-group">
                         <p class="form-label">Email Address</p>
@@ -21,15 +44,6 @@
                         <input type="password">
                     </div>
                     <button class="button-imp">Log In</button>
-                    <div class="divider">
-                        <span class="divider-arm"></span>
-                        <p class="divider-text"> or</p>
-                        <span class="divider-arm"></span>
-                    </div>
-                    <button class="button-social button-social-google" onclick="
-                    var googleSignInEvent = new Event('attempt-google-login');window.dispatchEvent(googleSignInEvent)"
-                        id="google-login">
-                        <i class="hi-logo-google-line"></i>Log In With Google</button>
                 </div>
             </div>
         </div>
